@@ -8,6 +8,36 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btnIlang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:text="Run"/>
+
+    <Button
+        android:id="@+id/btnGetar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="13dp"
+        android:backgroundTint="@color/black"
+        android:text="Skil1" />
+
+    <Button
+        android:id="@+id/btnGoda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="13dp"
+        android:backgroundTint="@color/black"
+        android:text="Skil2"/>
+
+    <Button
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,6 +58,30 @@
         android:layout_marginTop="82dp"
         android:layout_marginEnd="104dp"
         android:src="@drawable/pocong" />
+
+    <Button
+        android:id="@+id/btnLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toStartOf="@+id/btn_start"
+        android:backgroundTint="#25306C"
+        android:text="left" />
+
+    <Button
+        android:id="@+id/btnRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toEndOf="@+id/btn_start"
+        android:backgroundTint="#25306C"
+        android:text="right" />
 
     <!--<com.example.animation.PulseAnimationView-->
     <!--    android:layout_height="match_parent"-->

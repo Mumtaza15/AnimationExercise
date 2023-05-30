@@ -22,10 +22,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+
 public class MainActivity extends AppCompatActivity {
 
     ObjectAnimator mAnimator, Test, FadeIn;
-    RelativeLayout relativeLayout;  //declare this globally
+    Button left,right,getar,menghilang,menggoda;
+//    RelativeLayout relativeLayout;  //declare this globally
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,35 @@ public class MainActivity extends AppCompatActivity {
         Test = ObjectAnimator.ofFloat(imgView,"alpha", 1);
         FadeIn = ObjectAnimator.ofFloat(imgView, View.ALPHA, 0,1);
         imgView.setVisibility(View.GONE);
+
+        left = findViewById(R.id.btnLeft);
+        right = findViewById(R.id.btnRight);
+        getar = findViewById(R.id.btnGetar);
+        menghilang = findViewById(R.id.btnIlang);
+        menggoda = findViewById(R.id.btnGoda);
+
+//        goLeft = ObjectAnimator.ofFloat(imgView, "",)
+
+        getar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.Wave).duration(1000).repeat(0).playOn(imgView);
+            }
+        });
+
+        menghilang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.FadeOutUp).duration(1000).repeat(0).playOn(imgView);
+            }
+        });
+
+        menggoda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.Flash).duration(1000).repeat(0).playOn(imgView);
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,16 +109,30 @@ public class MainActivity extends AppCompatActivity {
                     public void onAnimationEnd(Animation animation) {
                         Log.i(TAG,
                                 "Ending button dropdown animation. Clearing animation and setting layout");
-                        imgView.clearAnimation();
-                        final int left = imgView.getLeft();
-                        final int top = imgView.getTop();
-                        final int right = imgView.getRight();
-                        final int bottom = imgView.getBottom();
-                        imgView.layout(left, top, right, bottom);
+//                        imgView.clearAnimation();
+//                        final int left = imgView.getLeft();
+//                        final int top = imgView.getTop();
+//                        final int right = imgView.getRight();
+//                        final int bottom = imgView.getBottom();
+//                        imgView.layout(left, top, right, bottom);
 
                     }
                 });
                 imgView.startAnimation(transAnim);
+            }
+        });
+
+        left.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.BounceInLeft).duration(1000).repeat(0).playOn(imgView);
+            }
+        });
+
+        right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                YoYo.with(Techniques.BounceInRight).duration(1000).repeat(0).playOn(imgView);
             }
         });
     }
